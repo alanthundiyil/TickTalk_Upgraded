@@ -20,6 +20,10 @@ jobs:
         with:
           channel: 'stable'
       - run: flutter pub get
+
+      # Run static analysis
+      - name: Run Flutter Analyzer
+      - run: flutter analyze
       - run: flutter build apk --release --split-per-abi
 
       - name: Push to Releases
